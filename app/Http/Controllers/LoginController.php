@@ -22,6 +22,8 @@ class LoginController extends Controller
             $user->save();
 
             Session::put('_sessionToken', $request->input('_token'));
+            Session::put('user_id', $user->id);
+
             return response()->json(['success' => true, 'link' => 'home']);
         } catch (Exception $e) {
             return response()->json(['error'=>"Up exception: $e->getMessage()"]);
@@ -38,7 +40,12 @@ class LoginController extends Controller
             ['name', '=', $name]
         ])->get();
         if (Hash::check($pass, $user[0]->password)) {
+            $user[0]->remember_token = $_token;
+            $user[0]->save();
+
             Session::put('_sessionToken', $_token);
+            Session::put('user_id', $user[0]->id);
+
             return response()->json(['success' => true, 'link' => 'home']);
         } else {
             return response()->json(['error' => "No one account found"]);

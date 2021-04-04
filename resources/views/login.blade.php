@@ -10,7 +10,7 @@
 
 @section('content')
 
-    @include('inc.alpaca')
+    @include('inc.alpacas.alpaca')
 
     @include('inc.login.form')
 

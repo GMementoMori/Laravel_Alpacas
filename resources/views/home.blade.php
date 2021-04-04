@@ -11,8 +11,12 @@
 @section('content')
     @include('inc.home.header')
 
-    @if(true)
+    @if(!$register)
         @include('inc.home.create-alpaca-form')
+        @include('inc.alpacas.create-alpaca')
+    @else
+        @include('inc.home.action-form')
+        @include('inc.alpacas.alpaca-home')
     @endif
 
 @endsection

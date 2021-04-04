@@ -17,14 +17,6 @@
                 </div>
             </div>
         </div>
-        <div class="colors">
-            <p class="title-2">Color</p>
-            <div>
-                @foreach($colors as list($colorId, $colorTitle, $colorValue))
-                    <div class="color color-{{$colorTitle}}" style="background: {{$colorValue}}" data-color="{{$colorId}}"></div>
-                @endforeach
-            </div>
-        </div>
         <div class="button standard" id="submit-create">
             <button><span>GO</span> <i class="fa fa-check"></i></button>
         </div>

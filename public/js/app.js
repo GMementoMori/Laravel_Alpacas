@@ -19413,6 +19413,28 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/action-form.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/action-form.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/alpaca-home.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/alpaca-home.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/alpaca.scss":
 /*!************************************!*\
   !*** ./resources/sass/alpaca.scss ***!
@@ -19446,6 +19468,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/create-alpaca.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/create-alpaca.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/home.scss":
 /*!**********************************!*\
   !*** ./resources/sass/home.scss ***!
@@ -19469,9 +19502,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/register.scss ./resources/sass/alpaca.scss ./resources/sass/home.scss ./resources/sass/create-alpaca-form.scss ***!
-  \*********************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/register.scss ./resources/sass/alpaca.scss ./resources/sass/home.scss ./resources/sass/create-alpaca-form.scss ./resources/sass/create-alpaca.scss ./resources/sass/action-form.scss ./resources/sass/alpaca-home.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19480,7 +19513,10 @@ __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass
 __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/register.scss */"./resources/sass/register.scss");
 __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/alpaca.scss */"./resources/sass/alpaca.scss");
 __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/home.scss */"./resources/sass/home.scss");
-module.exports = __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/create-alpaca-form.scss */"./resources/sass/create-alpaca-form.scss");
+__webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/create-alpaca-form.scss */"./resources/sass/create-alpaca-form.scss");
+__webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/create-alpaca.scss */"./resources/sass/create-alpaca.scss");
+__webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/action-form.scss */"./resources/sass/action-form.scss");
+module.exports = __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/sass/alpaca-home.scss */"./resources/sass/alpaca-home.scss");
 
 
 /***/ })

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateAlpacaRequest;
 use App\Models\Alpacas;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\UsersAlpacas;
 use App\Models\AlpacasColors;
 
@@ -14,7 +14,6 @@ class CreateAlpacaController extends Controller
     public function create(CreateAlpacaRequest $request)
     {
         try {
-            $_token = $request->input('_token');
             $name = $request->input('name');
             $gender = $request->input('gender');
             $color = $request->input('color');
@@ -22,11 +21,11 @@ class CreateAlpacaController extends Controller
             $startHappiness = 100;
             $startHunger = 100;
 
-            $userId = $this->getCurrentUserId($_token);
+            $userId = $this->getCurrentUserId();
 
-            $alpacaId = $this->createAlpaca($name,$gender,$startAge,$startHappiness,$startHunger);
+            $alpacaId = $this->createAlpaca($name, $gender, $startAge, $startHappiness, $startHunger);
 
-            $test = $this->setUserAlpaca($userId, $alpacaId);
+            $this->setUserAlpaca($userId, $alpacaId);
 
             $this->setColorAlpaca($color, $alpacaId);
 
@@ -46,40 +45,33 @@ class CreateAlpacaController extends Controller
         $alpaca->hunger = $startHunger;
         $alpaca->save();
 
-//        return $alpaca->id;
-        return 2;
+        return $alpaca->id;
     }
 
     private function setUserAlpaca($userId, $alpacaId)
     {
-//        if(UsersAlpacas::where('user_id', $userId)->get()){
-//            return false;
-//        }else{
-            $relationUser = new UsersAlpacas();
-            $relationUser->userId = $userId;
-            $relationUser->alpacaId = $alpacaId;
-            $relationUser->save();
-//        }
+        $relationUserAlpaca = new UsersAlpacas();
+        $relationUserAlpaca->user_id = $userId;
+        $relationUserAlpaca->alpaca_id = $alpacaId;
+        $relationUserAlpaca->save();
     }
 
     private function setColorAlpaca($color, $alpacaId)
     {
-        if($relationColors = AlpacasColors::where('alpaca_id', $alpacaId)->get()){
-            $relationColors->alpaca_id = $alpacaId;
-            $relationColors->color_id = $color;
-            $relationColors->save();
-        }else{
-            $relationColors = new AlpacasColors();
-            $relationColors->alpaca_id = $alpacaId;
-            $relationColors->color_id = $color;
-            $relationColors->save();
-        }
+        $relationColors = new AlpacasColors();
+        $relationColors->alpaca_id = $alpacaId;
+        $relationColors->color_id = $color;
+        $relationColors->save();
     }
 
-    private function getCurrentUserId($_token)
+    private function getCurrentUserId()
     {
-//        $user = Users::where('_token', $_token)->get();
-//        return $user->id;
-        return 2;
+        $userId = session()->get('user_id');
+
+        $user = User::where([
+            ['id', '=', $userId]
+        ])->get();
+
+        return $user[0]->id;
     }
 }

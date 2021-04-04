@@ -15,7 +15,7 @@ class UserAuthenticateHome
      */
     public function handle($request, Closure $next)
     {
-        if(session()->has('_sessionToken')){
+        if(session()->has('_sessionToken') && session()->has('user_id')){
             return $next($request);
         }
 

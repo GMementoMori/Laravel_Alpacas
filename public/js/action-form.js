@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/create-alpaca-form.js":
-/*!********************************************!*\
-  !*** ./resources/js/create-alpaca-form.js ***!
-  \********************************************/
+/***/ "./resources/js/action-form.js":
+/*!*************************************!*\
+  !*** ./resources/js/action-form.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -219,14 +219,14 @@ $(function () {
 
 /***/ }),
 
-/***/ 3:
-/*!**************************************************!*\
-  !*** multi ./resources/js/create-alpaca-form.js ***!
-  \**************************************************/
+/***/ 5:
+/*!*******************************************!*\
+  !*** multi ./resources/js/action-form.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/js/create-alpaca-form.js */"./resources/js/create-alpaca-form.js");
+module.exports = __webpack_require__(/*! /home/olehkhramtsov/Web/Laravel/tamagochi/resources/js/action-form.js */"./resources/js/action-form.js");
 
 
 /***/ })

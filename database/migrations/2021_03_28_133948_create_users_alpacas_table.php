@@ -14,8 +14,10 @@ class CreateUsersAlpacasTable extends Migration
     public function up()
     {
         Schema::create('users_alpacas', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id');
             $table->integer('alpaca_id');
+            $table->timestamps();
         });
     }
 

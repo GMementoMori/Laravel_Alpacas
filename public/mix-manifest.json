@@ -1,10 +1,16 @@
 {
+    "/js/action-form.js": "/js/action-form.js",
+    "/js/alpaca-home.js": "/js/alpaca-home.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/register.css": "/css/register.css",
     "/css/alpaca.css": "/css/alpaca.css",
     "/css/home.css": "/css/home.css",
     "/css/create-alpaca-form.css": "/css/create-alpaca-form.css",
+    "/css/create-alpaca.css": "/css/create-alpaca.css",
+    "/css/action-form.css": "/css/action-form.css",
+    "/css/alpaca-home.css": "/css/alpaca-home.css",
+    "/js/create-alpaca.js": "/js/create-alpaca.js",
     "/js/create-alpaca-form.js": "/js/create-alpaca-form.js",
     "/js/home.js": "/js/home.js",
     "/js/register.js": "/js/register.js"

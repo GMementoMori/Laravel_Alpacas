@@ -14,8 +14,10 @@ class CreateAlpacasColorsTable extends Migration
     public function up()
     {
         Schema::create('alpacas_colors', function (Blueprint $table) {
+            $table->id();
             $table->integer('alpaca_id');
             $table->integer('color_id');
+            $table->timestamps();
         });
     }
 
