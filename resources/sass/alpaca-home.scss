@@ -1,8 +1,18 @@
-$green: #75c9b1;
-$d-green: #23646f;
-$yellow: #f5e9c7;
 $pink: #e87e70;
 $white: #fff;
+
+:root {
+    --main: #ff64fa;
+    --l-color: #ff96ff;
+    --nose-color: #ffaaff;
+    --eyes-color: #000000;
+    --d-color: #af14aa;
+}
+$main: var(--main);
+$l-color: var(--l-color);
+$nose-color: var(--nose-color);
+$eyes-color: var(--eyes-color);
+$d-color: var(--d-color);
 
 @mixin pseduo-div( $w, $h, $c ) {
     content: '';
@@ -17,73 +27,8 @@ $white: #fff;
     height: $h;
 }
 
-//body {
-//    margin: 0;
-//    background: $yellow;
-//    background: linear-gradient( $yellow, darken( $yellow, 5 ), darken( $yellow, 5 ) 92vmin, $pink calc( 92vmin + 1px ), darken( $pink, 5 ));
-//    min-height: 100vh;
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-//    overflow: hidden;
-//}
-
 .flex {
     display: flex;
-}
-
-.clouds {
-    position: absolute;
-    animation: clouds 20s linear 0s infinite;
-    @include w-h( 100%, 100% );
-    top: 0;
-    left: 50%;
-    transform: translate3d( -50%, 0, 0 );
-
-    div,
-    div::before,
-    div::after {
-        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-        bottom: 0;
-    }
-
-    div {
-        opacity: 0.4;
-        background-color: lighten( #7395A1, 12 );
-        position: absolute;
-
-        &:first-child {
-            @include w-h( 20vmin, 10vmin );
-            top: 5%;
-            left: 10%;
-
-            &::before {
-                @include pseduo-div( 50%, 50%, lighten( #7395A1, 16 ));
-                left: -20%;
-            }
-
-            &::after {
-                @include pseduo-div( 30%, 30%, lighten( #7395A1, 14 ));
-                right: -15%;
-            }
-        }
-
-        &:last-child {
-            @include w-h( 30vmin, 15vmin );
-            top: 15%;
-            right: 15%;
-
-            &::before {
-                @include pseduo-div( 40%, 40%, lighten( #7395A1, 17 ));
-                left: -15%;
-            }
-
-            &::after {
-                @include pseduo-div( 70%, 70%, lighten( #7395A1, 15 ));
-                right: -25%;
-            }
-        }
-    }
 }
 
 .alpaca {
@@ -92,8 +37,8 @@ $white: #fff;
     &__top,
     &__btm {
         @include w-h( 100%, 50% );
-        left: 200%;
-        bottom: -130%;
+        left: 460%;
+        bottom: -140%;
         position: relative;
     }
 
@@ -115,13 +60,13 @@ $white: #fff;
         left: 0;
 
         div {
-            background-color: $green;
+            background-color: $main;
             @include w-h( 25%, 100% );
             width: 25%;
             position: relative;
 
             &::after {
-                @include pseduo-div( 62%, 72%, $d-green );
+                @include pseduo-div( 62%, 72%, $d-color );
                 bottom: 5%;
             }
 
@@ -159,7 +104,7 @@ $white: #fff;
 
     &__face-neck {
         @include w-h( 100%, 75% );
-        background-color: $green;
+        background-color: $main;
         border-radius: 50% 50% 0 0 / 30% 30% 0 0;
 
         .face {
@@ -170,8 +115,9 @@ $white: #fff;
             margin-top: 36%;
 
             &::before {
-                @include pseduo-div( 70%, 100%, lighten( $green, 10 ) );
+                @include pseduo-div( 70%, 100%, $l-color );
                 border-radius: 50%;
+                border-bottom: 1px solid $d-color;
             }
         }
 
@@ -191,12 +137,13 @@ $white: #fff;
                 @include w-h( 35%, 100% );
                 background-color: $white;
                 border-radius: 50%;
+                border-top: 1px solid $d-color;
                 position: relative;
                 justify-content: center;
                 align-items: center;
 
                 &::after {
-                    @include pseduo-div( 45%, 45%, $d-green );
+                    @include pseduo-div( 45%, 45%, $eyes-color );
                     border-radius: 50%;
                     animation: blink 5s infinite ease-in-out;
                 }
@@ -224,21 +171,22 @@ $white: #fff;
             bottom: -4%;
 
             &::before {
-                @include pseduo-div( 70%, 100%, lighten( $green, 18 ) );
+                @include pseduo-div( 70%, 100%, $nose-color );
                 border-radius: 50%;
+                border-top: 1px solid $d-color;
             }
         }
 
         .nose {
             @include w-h( 20%, 15% );
-            background-color: $d-green;
+            background-color: $d-color;
             border-radius: 0 0 50% 50% / 0 0 100% 100%;
             margin-top: 5%;
         }
 
         .mouth {
             @include w-h( 50%, 25% );
-            background-color: $d-green;
+            background-color: $d-color;
             border-radius: 0 0 50% 50% / 0 0 100% 100%;
             margin-top: 5%;
             animation: smile 4s 0.5s infinite ease-in-out;
@@ -248,7 +196,7 @@ $white: #fff;
 
 .tail {
     border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-    background-color: $green;
+    background-color: $main;
     @include w-h( 10%, 30% );
     align-self: flex-end;
     transform-origin: 0% 100%;
@@ -257,7 +205,7 @@ $white: #fff;
 }
 
 .body {
-    background-color: $green;
+    background-color: $main;
     @include w-h( 90%, 55% );
     position: absolute;
     top: 0;
@@ -277,14 +225,14 @@ $white: #fff;
         position: relative;
         right: 16%;
         bottom: 13%;
-        border-top: 6.5vmin solid lighten( $green, 15 );
+        border-top: 6.5vmin solid $l-color;
         border-right: 2.5vmin solid transparent;
         border-left: 2.5vmin solid transparent;
 
         &::before,
         &::after {
             @include pseduo-div( 0, 0, transparent );
-            border-top: 5vmin solid lighten( $green, 15 );
+            border-top: 5vmin solid $l-color;
             border-right: 2vmin solid transparent;
             border-left: 2vmin solid transparent;
             transform-origin: 50% 0;
@@ -313,17 +261,17 @@ $white: #fff;
 
         div {
             @include w-h( 55%, 90% );
-            background-color: $green;
+            background-color: $main;
             position: absolute;
 
             &::after {
-                @include pseduo-div( 35%, 50%, $green );
+                @include pseduo-div( 35%, 50%, $main );
                 bottom: -20%;
             }
 
             &:first-child,
             &:first-child::after {
-                background-color: $d-green;
+                background-color: $d-color;
             }
         }
     }
@@ -353,7 +301,6 @@ $white: #fff;
     &__back {
         div {
             border-radius: 100% 100% 0% 120%;
-            //border-radius: 0 0 0 100% / 0 0 0 30%;
 
             &:last-child,
             &:last-child::after,
@@ -552,7 +499,3 @@ $white: #fff;
     90% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
-//@keyframes clouds {
-//    0%   { transform: translate(0, 0);}
-//    100% { transform: translate(-20px, 0);}
-//}

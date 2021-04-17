@@ -185,23 +185,7 @@ $(function () {
         });
       }
     });
-  }); // $(".button").click(function(e) {
-  //     var pX = e.pageX,
-  //         pY = e.pageY,
-  //         oX = parseInt($(this).offset().left),
-  //         oY = parseInt($(this).offset().top);
-  //
-  //     $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
-  //     $('.x-' + oX + '.y-' + oY + '').animate({
-  //         "width": "500px",
-  //         "height": "500px",
-  //         "top": "-250px",
-  //         "left": "-250px",
-  //
-  //     }, 600);
-  //     $("button", this).addClass('active');
-  // })
-
+  });
   $(".alt-2").click(function () {
     if (!$(this).hasClass('material-button')) {
       $(".shape").css({

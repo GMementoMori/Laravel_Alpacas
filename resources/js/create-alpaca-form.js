@@ -120,7 +120,7 @@ $(function() {
     });
 
     $('#submit-create').click(function (){
-        let _token   = $('meta[name="csrf-token"]').attr('content');
+        let _token = $('meta[name="csrf-token"]').attr('content');
         let name = $('#name').val();
         let gender = $('.select-gender').attr('data-gender');
         let color = $('.color.select').attr('data-color');

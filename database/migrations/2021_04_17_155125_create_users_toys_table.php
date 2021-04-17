@@ -14,8 +14,10 @@ class CreateUsersToysTable extends Migration
     public function up()
     {
         Schema::create('users_toys', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id');
             $table->integer('toy_id');
+            $table->timestamps();
         });
     }
 

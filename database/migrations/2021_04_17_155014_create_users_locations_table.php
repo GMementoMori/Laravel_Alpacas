@@ -14,8 +14,10 @@ class CreateUsersLocationsTable extends Migration
     public function up()
     {
         Schema::create('users_locations', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id');
             $table->integer('location_id');
+            $table->timestamps();
         });
     }
 

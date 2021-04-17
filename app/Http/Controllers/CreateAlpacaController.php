@@ -1,16 +1,22 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\CreateAlpacaRequest;
 use App\Models\Alpacas;
 use App\Models\User;
 use App\Models\UsersAlpacas;
 use App\Models\AlpacasColors;
 
+/**
+ * Class CreateAlpacaController
+ * @package App\Http\Controllers
+ */
 class CreateAlpacaController extends Controller
 {
+    /**
+     * @param CreateAlpacaRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function create(CreateAlpacaRequest $request)
     {
         try {
@@ -26,7 +32,6 @@ class CreateAlpacaController extends Controller
             $alpacaId = $this->createAlpaca($name, $gender, $startAge, $startHappiness, $startHunger);
 
             $this->setUserAlpaca($userId, $alpacaId);
-
             $this->setColorAlpaca($color, $alpacaId);
 
             return response()->json(['success' => true, 'link' => 'home']);
@@ -35,6 +40,14 @@ class CreateAlpacaController extends Controller
         }
     }
 
+    /**
+     * @param $name
+     * @param $gender
+     * @param $startAge
+     * @param $startHappiness
+     * @param $startHunger
+     * @return mixed
+     */
     private function createAlpaca($name, $gender, $startAge, $startHappiness, $startHunger)
     {
         $alpaca = new Alpacas();
@@ -48,6 +61,10 @@ class CreateAlpacaController extends Controller
         return $alpaca->id;
     }
 
+    /**
+     * @param $userId
+     * @param $alpacaId
+     */
     private function setUserAlpaca($userId, $alpacaId)
     {
         $relationUserAlpaca = new UsersAlpacas();
@@ -56,6 +73,10 @@ class CreateAlpacaController extends Controller
         $relationUserAlpaca->save();
     }
 
+    /**
+     * @param $color
+     * @param $alpacaId
+     */
     private function setColorAlpaca($color, $alpacaId)
     {
         $relationColors = new AlpacasColors();
@@ -64,6 +85,9 @@ class CreateAlpacaController extends Controller
         $relationColors->save();
     }
 
+    /**
+     * @return mixed
+     */
     private function getCurrentUserId()
     {
         $userId = session()->get('user_id');

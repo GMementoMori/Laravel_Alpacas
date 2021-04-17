@@ -44,3 +44,7 @@
         </div>
     </div>
 </div>
+
+<script type='text/javascript'>
+    var alpacaColor = @json($alpacaColor);
+</script>

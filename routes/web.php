@@ -31,4 +31,6 @@ Route::group(['middleware' => ['userAuthenticateHome']], function (){
 
     Route::post('/logout', 'LogoutController@logout');
 
+    Route::post('/alpaca-actions', 'ActionsController@index');
+
 });

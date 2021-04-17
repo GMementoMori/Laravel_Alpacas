@@ -1,8 +1,4 @@
 body {
-  background-image: url(http://127.0.0.1:8000/images/home-background.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
 }
@@ -13,11 +9,10 @@ html {
 }
 
 #logout {
-  border: 0px solid white;
-  width: 100px;
-  height: 100px;
-  background: #a4bac2;
   color: #ED2553;
-  font-size: 40px;
+  font-size: 45px;
+  font-weight: bolder;
+  float: right;
+  margin-top: -10px;
 }
 

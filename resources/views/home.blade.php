@@ -19,6 +19,8 @@
         @include('inc.alpacas.alpaca-home')
     @endif
 
+    @include('inc.home.background')
+
 @endsection
 
 @section('scripts')
