@@ -37,7 +37,15 @@ class ActionsController extends Controller
     private function setUserlocation($idLocation)
     {
         $location = UsersLocations::where([['user_id', '=', $this->userId]])->get();
-        $location[0]->location_id = $idLocation;
-        $location[0]->save();
+        if(isset($location[0])){
+            $location[0]->location_id = $idLocation;
+            $location[0]->save();
+        }else{
+            $location = new UsersLocations();
+            $location->location_id = $idLocation;
+            $location->user_id = $this->userId;
+            $location->save();
+        }
+
     }
 }

@@ -43,7 +43,7 @@ class PageHomeController extends Controller
             return view('home', [
                 'register' => true,
                 'backImage' => '/images/' . $this->getMainLocation(),
-                'alpacaName' => $alpaca->name,
+                'alpacaName' => $this->alpaca->name,
                 'alpacaColor' => $this->getAlpacaColor(),
                 'actions' => [
                     'Location' => $this->getActions('\App\Models\Locations'),
@@ -85,7 +85,9 @@ class PageHomeController extends Controller
     private function getMainLocation()
     {
         $locationId = UsersLocations::where([['user_id', '=', $this->userId]])->get();
-
+        if(!isset($locationId[0]->location_id)){
+            return 'forest.jpg';
+        }
         $location = Locations::where([['id', '=', $locationId[0]->location_id]])->get();
 
         return $location[0]->path;
