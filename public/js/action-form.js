@@ -140,7 +140,9 @@ $(function () {
         _token: _token
       },
       success: function success(response) {
-        window.location.href = response['link'];
+        if (response['success']) {
+          window.location.href = response['link'];
+        }
       },
       error: function error(xhr) {
         $('.alert-danger.d-none').removeClass('d-none');

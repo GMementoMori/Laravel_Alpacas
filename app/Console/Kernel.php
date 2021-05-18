@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\Happy::class,
+        Commands\Hunger::class,
     ];
 
     /**
@@ -24,7 +25,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+         $schedule->command('alpaca:happy')->hourly();
+         $schedule->command('alpaca:hunger')->hourly();
     }
 
     /**

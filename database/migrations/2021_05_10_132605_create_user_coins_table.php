@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersCoinsTable extends Migration
+class CreateUserCoinsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateUsersCoinsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_coins', function (Blueprint $table) {
+        Schema::create('user_coins', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id');
             $table->integer('coins');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateUsersCoinsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_coins');
+        Schema::dropIfExists('user_coins');
     }
 }

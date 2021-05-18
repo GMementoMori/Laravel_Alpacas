@@ -57,7 +57,9 @@ $(function() {
                 _token: _token
             },
             success: function (response) {
-                window.location.href = response['link'];
+                if (response['success']){
+                    window.location.href = response['link'];
+                }
             },
             error: function (xhr) {
                 $('.alert-danger.d-none').removeClass('d-none');
